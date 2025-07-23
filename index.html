@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCCookies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: #121014;
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1d1b20;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      margin: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 30px;
+    }
+
+    .logo span {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .get-gems {
+      background-color: #e63946;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 3px #a12834;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-left {
+      max-width: 600px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #aaa;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .boost, .outline {
+      padding: 10px 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .boost {
+      background-color: #e63946;
+      border: none;
+      color: white;
+      box-shadow: 0 3px #a12834;
+    }
+
+    .outline {
+      border: 2px solid #e63946;
+      color: #e63946;
+      background-color: transparent;
+    }
+
+    .socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .socials img {
+      height: 30px;
+    }
+
+    .hero-right img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .scroll-banner {
+      background-color: #e63946;
+      text-align: center;
+      padding: 1rem;
+      font-weight: bold;
+      font-size: 1rem;
+      color: white;
+      border-radius: 10px;
+      margin: 2rem 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="image copy 3.png" alt="Logo" />
+        <span>MCCookies</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+   <a href="dashboard.html"><button class="get-gems">Get Cookies</button></a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Earn Cookie<br />From Watching ads<br />Link</h1>
+      <p>Earn Cookies and redeem them for free</p>
+      <div class="buttons">
+        <button class="boost">Redeem For Free</button>
+        <span>or</span>
+        <button class="outline">Get Cookies</button>
+      </div>
+      <div class="socials">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/discord-logo.png" />
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" />
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" />
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="image copy 2.png" alt="Laptop Graphic" />
+    </div>
+  </section>
+
+  <div class="scroll-banner">Scroll down to learn more ⌄</div>
+
+  <div style="text-align: center; margin-bottom: 40px;">
+  <h2 style="
+    color: #ff3c3c;
+    font-size: 36px;
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #ff3c3c;
+  ">
+    How to use MCCookies
+  </h2>
+</div>
+
+<!-- ✅ PLACE THIS WHERE YOU WANT THE BOXES TO SHOW -->
+<div class="mc-box-wrapper">
+  <div class="mc-box">Earn Cookies For Clicking Links</div>
+  <div class="mc-box">Check Them In DashBoard</div>
+  <div class="mc-box">Redeem Them</div>
+</div>
+
+<!-- ✅ ADD THIS TO YOUR EXISTING CSS FILE or <style> -->
+<style>
+  .mc-box-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  .mc-box {
+    background-color: #2b2b36;
+    width: 360px;   /* big width */
+    height: 220px;  /* big height */
+    border-radius: 24px;
+    color: #ff4d4d;
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+</style>
+<br>
+<br>
+<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MCCookies - Elevate Tab</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+
+    .elevate-section {
+      width: 100%;
+      background-color: #ff3b3b;
+      padding: 80px 20px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 59, 59, 0.3);
+    }
+
+    .elevate-section h2 {
+      font-size: 36px;
+      color: #ffffff;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .boost-button {
+      display: inline-block;
+      padding: 16px 40px;
+      background-color: #000000;
+      color: white;
+      border-radius: 50px;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .boost-button:hover {
+      background-color: #222;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Elevate CTA Section with Red Background -->
+  <section class="elevate-section">
+    <h2>Earn Cookies From Today For Free</h2>
+    <a href="#start" class="boost-button">Start Earning</a>
+  </section>
+
+</body>
+</html>
+
+
+<!-- WHAT MCCOOKIES IS USED FOR SECTION -->
+<section style="background-color: #0f0f0f; padding: 80px 20px; font-family: 'Arial', sans-serif; color: white;">
+  <div style="text-align: center; margin-bottom: 50px;">
+    <h2 style="font-size: 36px; color: #ff3c3c; margin-bottom: 10px; display: inline-block; border-bottom: 4px solid #ff3c3c; padding-bottom: 8px;">
+      What MCCookies is used for
+    </h2>
+  </div>
+
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-direction: column; gap: 30px;">
+    
+    <div style="background-color: #1a1a1a; padding: 30px 40px; border-radius: 18px; display: flex; align-items: center; gap: 20px; box-shadow: 0 0 15px rgba(255, 59, 59, 0.1);">
+      <img src="https://img.icons8.com/ios-filled/60/ff3c3c/link--v1.png" alt="Shorten" style="flex-shrink: 0;">
+      <div>
+        <h3 style="margin: 0 0 10px; font-size: 22px;">Earn Cookies</h3>
+        <p style="margin: 0; color: #cccccc;">Earn Cookies From Doing Same Tasks Like Watching Ads And Opening Links</p>
+      </div>
+    </div>
+
+    <div style="background-color: #1a1a1a; padding: 30px 40px; border-radius: 18px; display: flex; align-items: center; gap: 20px; box-shadow: 0 0 15px rgba(255, 59, 59, 0.1);">
+      <img src="https://img.icons8.com/ios-filled/60/ff3c3c/combo-chart--v1.png" alt="Analytics" style="flex-shrink: 0;">
+      <div>
+        <h3 style="margin: 0 0 10px; font-size: 22px;">Why We Use Your Website For Tasks</h3>
+        <p style="margin: 0; color: #cccccc;">See How Many Touchs Our Link They Will Get A Certain Amount Of Cookies And You Can Redeem Them</p>
+      </div>
+    </div>
+
+    <div style="background-color: #1a1a1a; padding: 30px 40px; border-radius: 18px; display: flex; align-items: center; gap: 20px; box-shadow: 0 0 15px rgba(255, 59, 59, 0.1);">
+      <img src="https://img.icons8.com/ios-filled/60/ff3c3c/money-bag-euro.png" alt="Rewards" style="flex-shrink: 0;">
+      <div>
+        <h3 style="margin: 0 0 10px; font-size: 22px;">How To Earn</h3>
+        <p style="margin: 0; color: #cccccc;">Every click can earn you Cookies. Use them for cool rewards or cashouts.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer style="background-color: #1e1e28; padding: 60px 20px; color: white; font-family: sans-serif;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+    
+    <!-- Left Column -->
+    <div style="flex: 1 1 250px;">
+      <h2 style="color: #ff4d4d; font-size: 28px; margin-bottom: 16px;">MCCookies</h2>
+      <p style="line-height: 1.6;">Earn Cookies And Get Unlimited Fun And Cool Rewards</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div style="flex: 1 1 150px;">
+      <h3 style="color: #ff4d4d; font-size: 18px; margin-bottom: 12px;">Quick Links</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#" style="color: white; text-decoration: none;">Home</a></li>
+        <li><a href="#" style="color: white; text-decoration: none;">Features</a></li>
+        <li><a href="#" style="color: white; text-decoration: none;">Earn</a></li>
+        <li><a href="#" style="color: white; text-decoration: none;">Login</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div style="flex: 1 1 150px;">
+      <h3 style="color: #ff4d4d; font-size: 18px; margin-bottom: 12px;">Follow Us</h3>
+      <ul style="list-style: none; padding: 0; display: flex; gap: 12px;">
+        <li><a href="#" style="color: white; text-decoration: none;">Twitter</a></li>
+        <li><a href="#" style="color: white; text-decoration: none;">Instagram</a></li>
+        <li><a href="#" style="color: white; text-decoration: none;">Discord</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div style="text-align: center; margin-top: 40px; color: #aaa; font-size: 14px;">
+    &copy; 2025 MCCookies. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

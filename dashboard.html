@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - MCCookies</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .header {
+      background-color: #1a1a1a;
+      padding: 40px;
+      text-align: center;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 60, 60, 0.5);
+      margin-bottom: 50px;
+    }
+
+    .header h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 28px;
+      color: #ff3c3c;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .task {
+      background: linear-gradient(145deg, #1c1c1c, #0e0e0e);
+      border: 2px solid #ff3c3c33;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 60, 60, 0.3);
+      text-align: center;
+      transition: 0.3s;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .task:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 40px rgba(255, 60, 60, 0.6);
+    }
+
+    .task img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .task h3 {
+      font-size: 20px;
+      margin: 10px 0;
+      color: #ff3c3c;
+    }
+
+    .task button {
+      background-color: black;
+      color: #ff3c3c;
+      border: 2px solid #ff3c3c;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: auto;
+      transition: 0.3s;
+    }
+
+    .task button:hover {
+      background-color: #1a1a1a;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🍪 MCCookies Dashboard</h1>
+    <p>You've earned <span id="cookieCount">0</span> cookies</p>
+  </div>
+
+  <div class="grid" id="taskGrid"></div>
+
+  <script>
+    const taskGrid = document.getElementById('taskGrid');
+    const cookieDisplay = document.getElementById('cookieCount');
+    let cookies = parseInt(localStorage.getItem('cookies') || '0');
+    cookieDisplay.innerText = cookies;
+
+    const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
+
+    function createTask(i) {
+      const task = document.createElement('div');
+      task.className = 'task';
+      task.innerHTML = `
+        <img src="https://via.placeholder.com/300x180?text=Task+${i + 1}" alt="Task Image" />
+        <h3>Task ${i + 1}</h3>
+        <button onclick="openTask(${i + 1})">Start Task</button>
+      `;
+      taskGrid.appendChild(task);
+    }
+
+    function openTask(taskNum) {
+      const win = window.open(`task.html?task=${taskNum}`, '_blank');
+
+      // Listen for task completion message
+      window.addEventListener('message', (e) => {
+        if (e.data === `task-${taskNum}-completed` && !completedTasks.includes(taskNum)) {
+          cookies += 10;
+          cookieDisplay.innerText = cookies;
+          completedTasks.push(taskNum);
+          localStorage.setItem('cookies', cookies);
+          localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+          alert("🎉 Task completed! You earned 10 cookies!");
+        }
+      }, { once: true });
+    }
+
+    for (let i = 0; i < 12; i++) {
+      createTask(i);
+    }
+  </script>
+</body>
+</html>
